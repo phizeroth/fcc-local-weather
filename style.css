@@ -52,7 +52,7 @@ html, body {
 }
 
 #weather-details {
-    
+
 }
 
 #temp-div {
@@ -69,6 +69,7 @@ html, body {
 #unit {
     font-size: 3em;
     font-family: 'Dosis';
+    cursor: pointer;
 }
 
 #weather-title {
@@ -79,7 +80,6 @@ html, body {
     font-family: 'Dosis';
 }
 
-/* spinner credit: http://tobiasahlin.com/spinkit/
 .spinner {
   width: 40px;
   height: 40px;

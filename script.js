@@ -1,15 +1,17 @@
-$(document).ready(function() {
+var units = ['C', 'F'];
+var unitIndex = 1;    //set default to Fahrenheit
+var loc = '';
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-    loadWeather(position.coords.latitude, position.coords.longitude);
-  });
+function foo(lat, long) {
+  loc = lat + ',' + long;
+  loadWeather(loc, units[unitIndex]);
+}
 
-  function loadWeather(lat, long) {
-    console.log(lat);
-    console.log(long);
+function loadWeather(loc, unit) {
+    console.log(loc);
     $.simpleWeather({
-      unit: 'F',
-      location: lat + ',' + long,
+      unit: unit,
+      location: loc,
       success: function(weather) {
         $('#spinner').css('display', 'none');
         $('.content').css('display', 'inherit');
@@ -26,4 +28,16 @@ $(document).ready(function() {
       }
     });
   }
+
+$(document).ready(function() {
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    foo(position.coords.latitude, position.coords.longitude);
+  });
+
+  $('#unit').on('click', function() {
+    unitIndex ^= 1;   //toggle units
+    loadWeather(loc, units[unitIndex]);
+  });
+
 });
