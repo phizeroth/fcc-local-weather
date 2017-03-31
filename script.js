@@ -25,6 +25,8 @@ function loadWeather(loc, unit) {
         $('#hi').html('HI ' + weather.high);
         $('#lo').html('LO ' + weather.low);
         $('#weather-title').html(weather.currently);
+        $('#icon').addClass('wi-yahoo-' + weather.code)
+        console.log(weather.code);
       }
     });
   }

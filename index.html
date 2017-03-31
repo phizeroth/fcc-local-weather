@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Local Weather</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/weather-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../components/simpleWeather/jquery.simpleWeather.js"></script>
     <script src="../components/moment/moment.js"></script>
@@ -12,23 +13,23 @@
 </head>
 <body>
     <div class="container">
-	        <span class ="icon" id="spinner" data-icon="B"></span>
+	    <span class="wi wi-day-sunny" id="spinner"></span>
         <div class="content">
             <div id="header">
-                <span id="city">--</span><br/>
-                <span id="region">--</span><br/>
-                <span id="date">--</span>
+                <span id="city"></span><br/>
+                <span id="region"></span><br/>
+                <span id="date"></span>
             </div>
             <div id="weather-details">
-                <span class="icon" data-icon=""></span>
+                <i class="wi" id="icon"></i>
                 <div id="temp-div">
-                    <span id="temperature">--</span><span id="unit">--</span>
+                    <span id="temperature"></span><span id="unit"></span>
                 </div>
-                <span class="hilo" id="hi">--</span>
-                <span class="hilo" id="lo">--</span>
+                <span class="hilo" id="hi"></span>
+                <span class="hilo" id="lo"></span>
             </div>
             <div id="weather-summary">
-                <span id="weather-title">--</span>
+                <span id="weather-title"></span>
             </div>
         </div>
     </div>
