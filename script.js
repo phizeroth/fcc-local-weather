@@ -18,7 +18,7 @@ function loadWeather(loc, unit) {
         $('.container').css('display', 'block');
         $('#city').html(weather.city);
         $('#region').html(weather.region + ', ' + weather.country);
-        $('#date').html(moment().format('MMMM D, YYYY'));
+        $('#date').html(moment().format('dddd, MMMM D, YYYY'));
         $('.icon').attr('data-icon', 'N');
         $('#temperature').html(weather.temp);
         $('#unit').html('°' + this.unit);
