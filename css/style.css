@@ -15,10 +15,6 @@ html, body {
     margin: 0;
 }
 
-.wi {
-    font-size: 5em;
-}
-
 .container {
     display: flex;
     width: 100%;
@@ -39,11 +35,18 @@ html, body {
 
 .content {
     display: none;
+    height: 100%;
+    flex-direction: column;
+}
+
+#header, #weather-details, #weather-summary {
+    flex: 0 1 auto;
 }
 
 #city {
     font-family: 'Righteous';
     font-size: 4em;
+    line-height: 0.8;
 }
 
 #region {
@@ -52,6 +55,7 @@ html, body {
 
 #date {
     font-size: 1.2em;
+    padding-top: 48px;
 }
 
 #weather-details {
@@ -59,11 +63,33 @@ html, body {
     justify-content: center;
 }
 
+
+#weather-title {
+    font-size: 1.5em;
+}
+
+.wi {
+    font-size: 5em;
+}
+
+#icon-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 3%;
+}
+
+#icon {
+    margin-right: 12px
+}
+
 #temp-div {
     display: flex;
-    /*padding: 0 12px;*/
+    justify-content: center;
     height: 100%;
     font-family: 'Dosis';
+    flex: 0 1 auto;
+    padding: 16px 0;
 }
 
 #temperature {
@@ -78,8 +104,8 @@ html, body {
     align-self: flex-start;
 }
 
-#weather-title {
-    font-size: 1.5em;
+#icon-div, #hilo {
+    flex: 0 1 33%;
 }
 
 #hilo {
@@ -89,24 +115,20 @@ html, body {
     justify-content: flex-end;
     align-content: flex-start;
     flex-direction: column;
+    padding: 16px 0 16px 3%;
+}
+
+.hilo-text {
+    font-size: 0.75em;
+    padding-right: 0.5em;
+}
+
+#test {
+    display: inline-block;
 }
 
 #hi, #lo {
     display: inline;
-}
-
-#icon-div, #temp-div, #hilo {
-    flex: 0 1 33%;
-}
-
-#icon-div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-#icon {
-    margin-right: 12px
 }
 
 hr {
@@ -127,6 +149,11 @@ hr {
 	-webkit-animation-duration: 10000ms;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
+
+    animation-name: spin;
+	animation-duration: 10000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 
