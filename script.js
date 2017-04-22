@@ -12,7 +12,7 @@ function loadWeather(loc) {
     console.log(loc);
     $.simpleWeather({
       location: loc,
-      unit: 'C',
+      unit: 'C',  // The API has a bug with alt.units for F, hence initializing with C
       success: function(weather) {
         $('#spinner').css('display', 'none');
         $('.content').css('display', 'flex');
@@ -59,7 +59,6 @@ $(document).ready(function() {
   $('#unit').on('click', function() {
     unitIndex ^= 1;   //toggle units
     updateTemps(units[unitIndex], temperature);
-    // loadWeather(loc, units[unitIndex]);
   });
 
 });
